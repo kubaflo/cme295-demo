@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" class="stanford-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An independent interactive companion to the English CME 295 transformers and large language models cheatsheet by Afshine Amidi and Shervine Amidi.">
+  <meta name="theme-color" content="#8c1515">
+  <title>CME 295 - Transformers &amp; Large Language Models | Interactive Cheatsheet</title>
+  <link rel="icon" href="assets/course-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/SourceSans3.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/SourceSerif4.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/shared.css">
+  <link rel="stylesheet" href="assets/stanford.css">
+  <link rel="stylesheet" href="assets/chapter-visuals.css">
+  <link rel="stylesheet" href="assets/chapter-quiz.css">
+  <script type="module" src="assets/ui.mjs"></script>
+</head>
+<body class="stanford" data-theme="stanford" data-initial-topic="foundations" data-topic-visuals="true" data-topic-quizzes="true">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="course-utility">
+    <div class="course-container">
+      <a class="course-origin" href="https://cme295.stanford.edu/" target="_blank" rel="noopener noreferrer">Stanford CME 295</a>
+      <span class="course-independent">Independent interactive companion</span>
+      <button type="button" class="motion-toggle" data-motion-toggle aria-pressed="true">Motion on</button>
+    </div>
+  </div>
+  <header class="course-header">
+    <div class="course-container course-masthead">
+      <a class="course-brand" href="index.html" aria-label="CME 295 interactive cheatsheet home">
+        <span class="course-code">CME 295</span>
+        <span class="course-brand-title">Transformers &amp;<br>Large Language Models</span>
+      </a>
+      <a class="course-original-link" href="https://cme295.stanford.edu/" target="_blank" rel="noopener noreferrer">Visit the course website <span aria-hidden="true">&nearr;</span></a>
+    </div>
+  </header>
+  <nav class="course-navigation" aria-label="Page navigation">
+    <div class="course-container">
+      <a href="#overview">Overview</a>
+      <a href="#chapters" aria-current="page">Cheatsheet</a>
+      <a href="illustrations.html">Interactive illustrations</a>
+      <a href="#resources">Resources</a>
+    </div>
+  </nav>
+  <div class="app-error" data-app-error role="alert" hidden></div>
+  <main id="main">
+    <section class="course-hero" id="overview" aria-labelledby="course-title">
+      <div class="course-container course-hero-grid">
+        <div class="course-introduction reveal">
+          <span class="eyebrow">CME 295 / Interactive cheatsheet</span>
+          <h1 id="course-title">Transformers &amp;<br>Large Language Models</h1>
+          <p class="course-description">A concise guide to the ideas behind modern language models.
+            Explore the English cheatsheet, then bring the equations to life with interactive illustrations.</p>
+          <p class="course-authors">Cheatsheet by <a href="https://www.mit.edu/~amidi/" target="_blank" rel="noopener noreferrer">Afshine Amidi</a>
+            and <a href="https://stanford.edu/~shervine/" target="_blank" rel="noopener noreferrer">Shervine Amidi</a>.</p>
+          <div class="course-hero-actions">
+            <a class="primary-button" href="#chapters">Explore the cheatsheet <span aria-hidden="true">&rarr;</span></a>
+            <a class="course-secondary-button" href="illustrations.html#attention">Try an illustration <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <figure class="course-figure reveal">
+          <div class="course-figure-label"><span>From tokens to context</span><span>Conceptual illustration</span></div>
+          <svg viewBox="0 0 440 330" role="img" aria-labelledby="architecture-title architecture-description">
+            <title id="architecture-title">The attention mechanism</title>
+            <desc id="architecture-description">Token embeddings are projected into query, key and value vectors. Attention uses query-key scores to form a weighted mix of values, producing a contextual representation.</desc>
+            <defs><marker id="course-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8c1515"/></marker></defs>
+            <g class="course-diagram-token"><rect x="20" y="15" width="72" height="36"/><rect x="102" y="15" width="72" height="36"/><rect x="184" y="15" width="72" height="36"/><rect x="266" y="15" width="72" height="36"/><rect x="348" y="15" width="72" height="36"/></g>
+            <g class="course-diagram-text"><text x="56" y="38">tokens</text><text x="138" y="38">become</text><text x="220" y="38">vectors</text><text x="302" y="38">with</text><text x="384" y="38">context</text></g>
+            <g class="course-diagram-flow" marker-end="url(#course-arrow)"><path d="M220 54V79"/><path d="M220 111V136H77V155"/><path d="M220 136V155"/><path d="M220 136H363V155"/><path d="M77 200V231H178"/><path d="M220 200V231"/><path d="M363 200V231H262"/><path d="M220 268V295"/></g>
+            <rect class="course-diagram-embedding" x="100" y="79" width="240" height="32"/>
+            <text class="course-diagram-text" x="220" y="100">Token embeddings</text>
+            <g class="course-diagram-projection"><rect x="38" y="157" width="78" height="43"/><rect x="181" y="157" width="78" height="43"/><rect x="324" y="157" width="78" height="43"/></g>
+            <g class="course-diagram-symbol"><text x="77" y="186">Q</text><text x="220" y="186">K</text><text x="363" y="186">V</text></g>
+            <rect class="course-diagram-attention" x="124" y="231" width="192" height="37"/>
+            <text class="course-diagram-on-red" x="220" y="255">Scaled dot-product attention</text>
+            <text class="course-diagram-text" x="220" y="318">Contextual representation</text>
+          </svg>
+          <figcaption>Queries compare with keys. Attention weights mix the values.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="course-section course-container" id="chapters" aria-labelledby="chapters-heading">
+      <div class="course-section-heading">
+        <div><span class="eyebrow">English reference / Nine chapters</span><h2 id="chapters-heading">The cheatsheet</h2></div>
+        <p>Explore a diagram. Read a concept. Quiz yourself.</p>
+      </div>
+      <div class="course-reference-layout">
+        <aside class="course-chapter-rail">
+          <details class="rail-chapters" open data-responsive-rail>
+            <summary>Browse the nine chapters</summary>
+            <label class="topic-search" for="topic-search">Search the cheatsheet
+              <input id="topic-search" type="search" placeholder="Try attention, LoRA or KV cache" data-topic-search>
+            </label>
+            <p class="search-status" data-search-status aria-live="polite">9 chapters</p>
+            <nav class="topic-nav" data-topic-nav aria-label="Cheatsheet chapters"></nav>
+          </details>
+          <a class="course-download" href="assets/source-en.pdf" target="_blank" rel="noopener">Read the complete English PDF <span aria-hidden="true">&nearr;</span></a>
+        </aside>
+        <article id="topic-content" class="topic-panel course-topic-panel" data-topic-panel></article>
+      </div>
+    </section>
+    <section class="course-section course-container" id="resources" aria-labelledby="resources-heading">
+      <div class="course-section-heading"><div><span class="eyebrow">Continue learning</span><h2 id="resources-heading">Course and reference materials</h2></div></div>
+      <div class="course-resources">
+        <a class="course-resource" href="https://cme295.stanford.edu/" target="_blank" rel="noopener noreferrer"><span class="eyebrow">The course</span><h3>Stanford CME 295</h3><p>Visit the original course website for its syllabus, lectures and course information.</p><span class="course-resource-link">Visit course website &nearr;</span></a>
+        <a class="course-resource" href="assets/source-en.pdf" target="_blank" rel="noopener"><span class="eyebrow">The reference</span><h3>VIP Cheatsheet</h3><p>The unchanged six-page English reference by Afshine Amidi and Shervine Amidi.</p><span class="course-resource-link">Open the English PDF &nearr;</span></a>
+        <a class="course-resource" href="https://superstudy.guide/transformers-large-language-models/" target="_blank" rel="noopener noreferrer"><span class="eyebrow">The textbook</span><h3>Super Study Guide</h3><p>Explore the authors' deeper explanations of transformers and large language models.</p><span class="course-resource-link">Explore the book &nearr;</span></a>
+      </div>
+      <p class="course-scope-note">This independent companion presents selected chapter summaries, interactive diagrams and 108 chapter-quiz questions.
+        The source PDF contains the complete cheatsheet.</p>
+    </section>
+    <noscript><div class="course-container course-noscript">The chapter browser, chapter diagrams and quizzes require JavaScript.
+      <a href="assets/source-en.pdf">Read the complete English cheatsheet.</a></div></noscript>
+  </main>
+  <footer class="course-footer">
+    <div class="course-container"><div class="credit" data-credit></div></div>
+  </footer>
+</body>
+</html>

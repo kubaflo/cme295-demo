@@ -1,0 +1,311 @@
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("fonts/SourceSans3.ttf") format("truetype");
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/SourceSerif4.ttf") format("truetype");
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+.stanford {
+  --bg: #fff; --panel: #fff; --ink: #2e2d29; --muted: #53565a; --line: #d5d5d4;
+  --accent: #8c1515; --on-accent: #fff; --soft: #f4f4f4;
+  --body-font: "Source Sans 3", Verdana, sans-serif;
+  --display-font: "Source Serif 4", Georgia, serif;
+  --heading-weight: 600; --widget-padding: 32px; --radius: 0; --button-radius: 0; --token-radius: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+html.stanford-page { scroll-padding-top: 82px; }
+.course-container { width: min(1216px, calc(100% - 80px)); margin-inline: auto; }
+.stanford .eyebrow, .stanford .mini-label, .stanford .widget-tag, .stanford .topic-number, .stanford .unit {
+  font-family: var(--body-font);
+}
+.stanford .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .075em; }
+.course-utility { background: var(--accent); color: #fff; }
+.course-utility > .course-container { min-height: 44px; display: flex; align-items: center; gap: 28px; }
+.course-origin { font: 600 18px/1.3 var(--display-font); text-decoration: none; }
+.course-origin:hover { text-decoration: underline; }
+.course-independent { font-size: 12px; margin-left: auto; }
+.course-utility .motion-toggle { font-size: 12px; padding: 3px 10px; border-color: #d6a8a8; border-radius: 0; }
+.course-utility :focus-visible, .course-footer :focus-visible { outline-color: #fff; }
+.course-header { background: #fff; }
+.course-masthead { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 29px 0; }
+.course-brand { display: flex; align-items: center; gap: 24px; text-decoration: none; color: var(--ink); }
+.course-code { font: 600 39px/1.1 var(--display-font); color: var(--accent); letter-spacing: -.025em; white-space: nowrap; }
+.course-brand-title { border-left: 1px solid #b6b1a9; padding-left: 24px; font-size: 18px; line-height: 1.3; font-weight: 600; }
+.course-original-link { font-size: 15px; text-decoration: none; color: var(--muted); }
+.course-original-link:hover { color: var(--accent); text-decoration: underline; }
+.course-original-link span { margin-left: 8px; }
+.course-navigation { position: sticky; top: 0; z-index: 25; background: #fff; border-block: 1px solid var(--line); box-shadow: 0 2px 5px #2e2d2905; }
+.course-navigation > .course-container { display: flex; gap: 34px; }
+.course-navigation a { text-decoration: none; font-size: 16px; font-weight: 600; padding: 15px 0 12px; border-bottom: 3px solid transparent; }
+.course-navigation a:hover, .course-navigation a[aria-current] { border-bottom-color: var(--accent); color: var(--accent); }
+.course-hero { background: #f4f4f4; border-bottom: 1px solid #e3e2df; }
+.course-hero-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 70px; align-items: center; padding-block: 60px; }
+.course-illustration-header { padding-block: 48px; }
+.course-introduction .eyebrow { color: var(--accent); margin-bottom: 21px; }
+.course-introduction h1 { font-size: clamp(40px, 4.6vw, 64px); font-weight: 600; line-height: 1.12; letter-spacing: -.035em; margin-bottom: 23px; }
+.course-description { font-size: 21px; line-height: 1.55; max-width: 55ch; margin-bottom: 19px; }
+.course-authors { font-size: 16px; color: var(--muted); margin-bottom: 26px; }
+.course-authors a { text-decoration-color: #a8a7a4; }
+.course-authors a:hover { color: var(--accent); text-decoration-color: currentColor; }
+.course-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.stanford .primary-button { font: 600 16px/1.3 var(--body-font); padding: 13px 19px; min-height: 46px; gap: 20px; }
+.stanford .primary-button:hover { background: #680f0f; border-color: #680f0f; filter: none; }
+.course-secondary-button { display: inline-flex; align-items: center; justify-content: center; gap: 20px; padding: 12px 18px; border: 1px solid #a8a7a4; font-size: 16px; font-weight: 600; text-decoration: none; background: #fff; min-height: 46px; }
+.course-secondary-button:hover { border-color: var(--accent); color: var(--accent); }
+.course-figure { margin: 0; min-width: 0; align-self: center; }
+.course-figure-label { border-top: 3px solid var(--accent); padding-top: 14px; display: flex; justify-content: space-between; gap: 18px; font-size: 12px; color: var(--muted); }
+.course-figure-label > span:first-child { color: var(--ink); font-weight: 600; }
+.course-figure svg { width: 100%; margin-top: 18px; }
+.course-diagram-token { fill: #fff; stroke: #c2bfba; }
+.course-diagram-text { fill: #53565a; font: 14px var(--body-font); text-anchor: middle; }
+.course-diagram-flow { fill: none; stroke: #8c1515; stroke-width: 1.5; }
+.course-diagram-embedding { fill: #e9e6df; stroke: #b6b1a9; }
+.course-diagram-projection { fill: #fff; stroke: #8c1515; stroke-width: 1.5; }
+.course-diagram-symbol { fill: #8c1515; font: 600 23px var(--display-font); text-anchor: middle; }
+.course-diagram-attention { fill: #8c1515; }
+.course-diagram-on-red { fill: #fff; font: 14px var(--body-font); text-anchor: middle; }
+.course-figure figcaption { font-size: 13px; color: var(--muted); text-align: center; margin-top: 10px; }
+.course-section { padding-block: 54px; }
+.course-section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 34px; }
+.course-section-heading h2 { font-size: 38px; font-weight: 600; letter-spacing: -.025em; }
+.course-section-heading .eyebrow { margin-bottom: 8px; }
+.course-section-heading > p { font-size: 16px; color: var(--muted); margin-bottom: 3px; }
+.course-reference-layout { display: grid; grid-template-columns: 282px minmax(0, 1fr); gap: 62px; align-items: start; }
+.course-chapter-rail { border-top: 3px solid var(--accent); padding-top: 20px; min-width: 0; }
+.course-chapter-rail .rail-chapters > summary { font-size: 17px; font-weight: 600; cursor: pointer; margin-bottom: 18px; list-style-position: inside; }
+.stanford .topic-search { font-size: 14px; color: var(--ink); font-weight: 600; }
+.stanford .topic-search input { font-size: 15px; min-height: 44px; margin-top: 9px; padding: 10px 12px; font-weight: 400; }
+.stanford .search-status { font-size: 13px; }
+.stanford .topic-link { padding: 14px 12px; font-size: 16px; gap: 12px; border-bottom: 1px solid #e2e1dd; }
+.stanford .topic-link[aria-pressed="true"] { background: #f7eeee; border-left: 3px solid var(--accent); padding-left: 9px; color: var(--accent); font-weight: 600; }
+.stanford .topic-number { font-size: 13px; }
+.stanford .topic-arrow { color: var(--accent); font-size: 16px; }
+.course-download { display: flex; align-items: center; gap: 18px; justify-content: space-between; font-size: 14px; line-height: 1.4; margin-top: 24px; text-decoration: none; color: var(--accent); padding: 12px 0; border-top: 1px solid var(--line); }
+.course-download:hover { text-decoration: underline; }
+.course-topic-panel { border-top: 1px solid var(--line); padding-top: 21px; scroll-margin-top: 85px; }
+.stanford .topic-panel h2 { font-size: 35px; font-weight: 600; letter-spacing: -.02em; }
+.stanford .topic-panel-heading .eyebrow { font-size: 12px; }
+.stanford .source-page { font: 14px var(--body-font); color: var(--accent); }
+.stanford .topic-summary { font-size: 22px; line-height: 1.5; margin-bottom: 29px; }
+.stanford .concept summary { font-size: 19px; padding: 18px 0; }
+.stanford .concept p { font-size: 17px; padding-right: 26px; line-height: 1.6; }
+.course-illustrations { padding-block: 54px 58px; background: #f4f4f4; border-block: 1px solid #e3e2df; }
+.course-illustrations .course-section-heading { margin-bottom: 15px; }
+.course-illustration-intro { font-size: 17px; color: var(--muted); margin-bottom: 29px; }
+.stanford .widget { border-color: #d3d1cd; border-radius: 0; box-shadow: none; }
+.course-attention { margin-bottom: 27px; border-top: 3px solid var(--accent); }
+.stanford .widget-heading { margin-bottom: 16px; }
+.stanford .widget-heading h2 { font: 600 29px/1.2 var(--body-font); letter-spacing: -.01em; }
+.stanford .widget-heading .eyebrow { font-size: 12px; margin-bottom: 8px; }
+.stanford .widget-tag { font-size: 11px; padding: 6px 9px; color: var(--muted); border-color: var(--line); }
+.stanford .widget-intro { font-size: 17px; }
+.stanford .attention-equation { padding: 22px 12px; background: #f7f6f3; border: 1px solid #e6e2da; margin-bottom: 23px; }
+.stanford math { font-size: 25px; }
+.stanford .query-readout { font-size: 16px; }
+.stanford .query-readout code { font-size: 13px; }
+.stanford .attention-visual { width: min(100%, 890px); margin: 8px auto 0; }
+.stanford .attention-connections { max-height: 145px; }
+.stanford .attention-tokens { gap: 10px; }
+.stanford .attention-token { padding: 16px 9px 12px; }
+.stanford .attention-token:hover { transform: translateY(-2px); }
+.stanford .token-label { font-size: 17px; font-weight: 600; }
+.stanford .token-weight { font-size: 12px; }
+.stanford .weight-track { height: 5px; margin: 14px 0 8px; }
+.stanford .attention-controls { font-size: 15px; gap: 24px; margin-top: 24px; }
+.stanford .range-control { max-width: 380px; gap: 5px 15px; }
+.stanford input[type="range"] { height: 30px; }
+.stanford .check-control { gap: 9px; }
+.stanford .text-button { font-size: 14px; }
+.stanford .attention-result { background: #f7f6f3; padding: 17px 20px; margin-top: 23px; }
+.stanford .attention-result .mini-label { font-size: 12px; margin-bottom: 5px; }
+.stanford .attention-result output { font-size: 18px; }
+.stanford .stepper { margin-top: 26px; }
+.stanford .attention-steps { gap: 8px; }
+.stanford .attention-steps button { padding: 11px; font-size: 14px; min-height: 70px; }
+.stanford .attention-steps button span { font: 12px var(--body-font); margin-bottom: 5px; }
+.stanford .step-note { margin-top: 15px; gap: 23px; align-items: flex-start; }
+.stanford .step-note p { font-size: 15px; min-height: 48px; }
+.stanford .small-button { font-size: 14px; padding: 9px 14px; min-height: 42px; }
+.stanford .math-inspector { font-size: 15px; margin-top: 23px; padding-top: 17px; }
+.stanford table { font-size: 12px; }
+.stanford caption { font: 13px/1.5 var(--body-font); margin-top: 4px; }
+.stanford th, .stanford td { padding: 12px 10px; }
+.stanford .demo-disclaimer { font-size: 13px; line-height: 1.6; margin-top: 20px; }
+.stanford .experiments-grid { gap: 27px; align-items: stretch; }
+.stanford .temperature-control { font-size: 17px; }
+.stanford .temperature-control output { font-size: 27px; }
+.stanford .range-labels { font-size: 13px; }
+.stanford .probabilities { gap: 13px; margin-block: 27px; }
+.stanford .probability-row { grid-template-columns: 58px 1fr 58px; font-size: 17px; gap: 12px; }
+.stanford .probability-row output { font-size: 12px; }
+.stanford .probability-track { height: 21px; }
+.stanford .sampling-actions .mini-label, .stanford .unit { font-size: 12px; }
+.stanford .sampling-actions .primary-button { font-size: 14px; padding: 11px 13px; gap: 12px; }
+.stanford .sample-output { background: #f4f4f4; min-height: 90px; }
+.stanford .sample-output p { font-size: 14px; }
+.stanford .sample-output .mini-label { font-size: 12px; }
+.stanford .sample-tokens li { font-size: 13px; padding: 4px 9px; }
+.stanford .diffusion-sequence { gap: 11px; min-height: 129px; margin-block: 34px; }
+.stanford .diffusion-token { font-size: 14px; min-width: 0; padding: 15px 6px; }
+.stanford .diffusion-progress output { font-size: 12px; }
+.stanford .diffusion-progress progress { min-width: 0; }
+.stanford .diffusion-status { font-size: 15px; line-height: 1.55; }
+.stanford .diffusion-controls { gap: 12px; }
+.stanford .diffusion-controls .primary-button { font-size: 14px; padding: 11px 13px; }
+.course-resources { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.course-resource { display: flex; flex-direction: column; min-width: 0; text-decoration: none; border: 1px solid var(--line); border-top: 3px solid var(--accent); padding: 28px; transition: border-color .2s, box-shadow .2s; }
+.course-resource:hover { border-color: var(--accent); box-shadow: 0 4px 15px #2e2d2910; }
+.course-resource h3 { font: 600 24px/1.25 var(--display-font); letter-spacing: -.02em; margin-bottom: 16px; }
+.course-resource p { font-size: 16px; color: var(--muted); line-height: 1.6; margin-bottom: 25px; }
+.course-resource-link { margin-top: auto; color: var(--accent); font-size: 15px; font-weight: 600; }
+.course-scope-note { font-size: 14px; color: var(--muted); margin-top: 25px; margin-bottom: 0; }
+.course-footer { background: var(--accent); color: #fff; border-top: 1px solid #6e0f0f; }
+.course-footer .credit { border: 0; margin: 0; padding-block: 38px; gap: 50px; }
+.course-footer .credit .eyebrow { color: #fff; font-size: 12px; }
+.course-footer .credit p { font-size: 16px; }
+.course-footer .credit .credit-note { color: #f4e8e8; font-size: 13px; }
+.course-footer .credit nav { gap: 9px; }
+.course-footer .credit nav a { color: #fff; font-size: 15px; }
+.course-noscript { padding-block: 20px; border-top: 1px solid var(--line); }
+.course-credits-header { padding-block: 22px; display: flex; justify-content: space-between; align-items: center; gap: 20px; border-bottom: 1px solid var(--line); font-size: 16px; }
+.course-credits-header a { color: var(--accent); }
+.course-credits-header > span { font-size: 13px; color: var(--muted); }
+.stanford .credits-main { max-width: 860px; width: calc(100% - 80px); margin: 55px auto; }
+.stanford .credits-main h1 { font: 600 50px/1.15 var(--display-font); letter-spacing: -.03em; margin-bottom: 35px; }
+.stanford .credits-main h2 { font: 600 30px/1.25 var(--display-font); margin: 36px 0 17px; }
+.stanford .credits-main p, .stanford .credits-main li { font-size: 18px; }
+.stanford .credits-main pre { font: 12px/1.8 "IBM Plex Mono", monospace; white-space: pre-wrap; overflow-wrap: anywhere; padding: 26px; border: 1px solid var(--line); background: #f4f4f4; }
+.stanford .credits-main a { color: var(--accent); }
+
+@media (max-width: 1080px) {
+  .course-container { width: calc(100% - 64px); }
+  .course-hero-grid { gap: 38px; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); padding-block: 46px; }
+  .course-introduction h1 { font-size: 49px; }
+  .course-description { font-size: 19px; }
+  .course-figure-label { display: block; }
+  .course-figure-label > span { display: block; }
+  .course-reference-layout { grid-template-columns: 260px minmax(0, 1fr); gap: 36px; }
+  .course-section-heading { align-items: flex-start; }
+  .course-section-heading > p { max-width: 31ch; }
+  .stanford .widget { --widget-padding: 26px; }
+  .stanford .widget-heading h2 { font-size: 26px; }
+  .stanford .widget-tag { display: none; }
+  .stanford .sampling-actions { flex-wrap: wrap; }
+  .stanford .diffusion-controls { flex-wrap: wrap; }
+  .course-resource { padding: 22px; }
+}
+@media (max-width: 780px) {
+  .course-container { width: calc(100% - 44px); }
+  .course-masthead { padding-block: 22px; }
+  .course-original-link { display: none; }
+  .course-hero-grid { grid-template-columns: 1fr; gap: 34px; padding-block: 37px; }
+  .course-introduction h1 { font-size: clamp(36px, 6.8vw, 49px); }
+  .course-description { max-width: 64ch; }
+  .course-figure { max-width: 480px; width: 100%; margin-inline: auto; }
+  .course-figure-label { display: flex; }
+  .course-reference-layout { grid-template-columns: 1fr; gap: 27px; }
+  .course-chapter-rail { padding-top: 15px; }
+  .course-download { margin-top: 10px; }
+  .course-chapter-rail .topic-nav { grid-template-columns: 1fr 1fr; gap: 0 18px; }
+  .course-resources { gap: 16px; }
+  .course-resource { padding: 18px; }
+  .course-resource h3 { font-size: 21px; }
+  .course-resource p { font-size: 15px; }
+  .stanford .experiments-grid { grid-template-columns: 1fr; }
+  .stanford .course-footer .credit { grid-template-columns: 1fr; gap: 20px; }
+  .course-footer .credit nav { display: flex; flex-wrap: wrap; gap: 20px; }
+}
+@media (max-width: 600px) {
+  html.stanford-page { scroll-padding-top: 112px; }
+  .course-utility > .course-container { min-height: 43px; gap: 14px; }
+  .course-origin { font-size: 17px; }
+  .course-independent { display: none; }
+  .course-utility .motion-toggle { margin-left: auto; }
+  .course-brand { gap: 16px; }
+  .course-code { font-size: 30px; }
+  .course-brand-title { padding-left: 16px; font-size: 15px; }
+  .course-navigation > .course-container { display: grid; grid-template-columns: auto auto; gap: 0 22px; }
+  .course-navigation a { font-size: 15px; padding-block: 10px 7px; white-space: nowrap; }
+  .course-hero-grid { padding-block: 31px; gap: 31px; }
+  .course-illustration-header { padding-block: 31px; }
+  .course-introduction .eyebrow { font-size: 11px; margin-bottom: 18px; }
+  .course-introduction h1 { font-size: clamp(33px, 8.8vw, 46px); margin-bottom: 19px; line-height: 1.14; }
+  .course-description { font-size: 18px; }
+  .course-authors { font-size: 15px; }
+  .course-hero-actions { display: grid; grid-template-columns: 1fr; gap: 11px; }
+  .course-hero-actions a { font-size: 16px; }
+  .course-figure-label { font-size: 11px; }
+  .course-figure-label > span:last-child { max-width: 14ch; text-align: right; }
+  .course-figure figcaption { font-size: 12px; }
+  .course-section, .course-illustrations { padding-block: 36px; }
+  .course-section-heading { display: block; margin-bottom: 24px; }
+  .course-section-heading h2 { font-size: 32px; }
+  .course-section-heading > p { max-width: none; margin: 14px 0 0; font-size: 15px; }
+  .stanford .topic-link { font-size: 15px; padding: 12px 8px; gap: 8px; }
+  .stanford .topic-link[aria-pressed="true"] { padding-left: 5px; }
+  .stanford .topic-number { font-size: 12px; }
+  .stanford .topic-arrow { display: none; }
+  .stanford .topic-panel h2 { font-size: 30px; }
+  .stanford .topic-panel-heading { display: block; }
+  .stanford .source-page { display: inline-block; margin-top: 12px; }
+  .stanford .topic-summary { font-size: 20px; }
+  .stanford .concept summary { font-size: 18px; }
+  .stanford .concept p { font-size: 17px; padding-right: 8px; }
+  .course-topic-panel { scroll-margin-top: 115px; }
+  .course-illustration-intro { font-size: 16px; }
+  .stanford .widget { --widget-padding: 20px; }
+  .stanford .widget-heading h2 { font-size: 25px; }
+  .stanford .widget-intro { font-size: 16px; }
+  .stanford .widget-heading .eyebrow { font-size: 11px; }
+  .stanford .attention-equation { padding: 16px 10px; }
+  .stanford math { font-size: 22px; }
+  .stanford .query-readout { font-size: 15px; gap: 9px; }
+  .stanford .query-readout code { font-size: 12px; }
+  .stanford .attention-tokens { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .stanford .attention-connections { display: none; }
+  .stanford .attention-visual { margin-top: 20px; }
+  .stanford .attention-token { padding: 12px 5px; }
+  .stanford .token-label { font-size: clamp(12px, 3.65vw, 15px); }
+  .stanford .attention-controls { flex-wrap: wrap; gap: 13px 20px; margin-top: 20px; }
+  .stanford .range-control { flex-basis: 100%; max-width: none; }
+  .stanford .attention-result { padding: 14px 12px; gap: 15px; flex-wrap: wrap; }
+  .stanford .attention-result .mini-label { font-size: 11px; }
+  .stanford .attention-result output { font-size: 16px; }
+  .stanford .attention-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+  .stanford .attention-steps button { padding: 9px 7px; font-size: 12px; min-height: 73px; }
+  .stanford .step-note { display: block; }
+  .stanford .step-note p { font-size: 15px; }
+  .stanford .step-note .small-button { margin-top: 12px; }
+  .stanford .math-inspector { font-size: 14px; }
+  .stanford .demo-disclaimer { font-size: 12px; }
+  .stanford .sampling-actions { gap: 17px; }
+  .stanford .probability-row { font-size: 16px; grid-template-columns: 45px 1fr 54px; gap: 10px; }
+  .stanford .range-labels { font-size: 12px; }
+  .stanford .diffusion-token { font-size: 12px; padding-inline: 3px; }
+  .stanford .diffusion-controls { gap: 10px; }
+  .stanford .diffusion-controls .primary-button, .stanford .diffusion-controls .small-button { font-size: 13px; }
+  .stanford .diffusion-progress { gap: 10px; }
+  .course-resources { grid-template-columns: 1fr; gap: 19px; }
+  .course-resource { padding: 23px; }
+  .course-resource h3 { font-size: 25px; }
+  .course-resource p { font-size: 17px; margin-bottom: 21px; }
+  .course-scope-note { font-size: 13px; }
+  .course-footer .credit { padding-block: 30px; }
+  .course-footer .credit p { font-size: 15px; }
+  .course-footer .credit .credit-note { font-size: 12px; }
+  .course-footer .credit nav a { font-size: 14px; }
+  .stanford .credits-main { width: calc(100% - 44px); margin-block: 35px; }
+  .stanford .credits-main h1 { font-size: 37px; }
+  .stanford .credits-main h2 { font-size: 27px; }
+  .stanford .credits-main p, .stanford .credits-main li { font-size: 17px; }
+  .stanford .credits-main pre { padding: 18px; font-size: 11px; }
+  .course-credits-header { flex-wrap: wrap; }
+}

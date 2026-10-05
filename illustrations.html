@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" class="stanford-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore attention, temperature and masked diffusion through three interactive teaching examples in the independent CME 295 companion.">
+  <meta name="theme-color" content="#8c1515">
+  <title>Interactive illustrations - CME 295 companion</title>
+  <link rel="icon" href="assets/course-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/SourceSans3.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/SourceSerif4.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/shared.css">
+  <link rel="stylesheet" href="assets/stanford.css">
+  <script type="module" src="assets/ui.mjs"></script>
+</head>
+<body class="stanford" data-theme="stanford">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="course-utility">
+    <div class="course-container">
+      <a class="course-origin" href="https://cme295.stanford.edu/" target="_blank" rel="noopener noreferrer">Stanford CME 295</a>
+      <span class="course-independent">Independent interactive companion</span>
+      <button type="button" class="motion-toggle" data-motion-toggle aria-pressed="true">Motion on</button>
+    </div>
+  </div>
+  <header class="course-header">
+    <div class="course-container course-masthead">
+      <a class="course-brand" href="index.html" aria-label="CME 295 interactive cheatsheet home">
+        <span class="course-code">CME 295</span>
+        <span class="course-brand-title">Transformers &amp;<br>Large Language Models</span>
+      </a>
+      <a class="course-original-link" href="https://cme295.stanford.edu/" target="_blank" rel="noopener noreferrer">Visit the course website <span aria-hidden="true">&nearr;</span></a>
+    </div>
+  </header>
+  <nav class="course-navigation" aria-label="Page navigation">
+    <div class="course-container">
+      <a href="index.html#overview">Overview</a>
+      <a href="index.html#chapters">Cheatsheet</a>
+      <a href="illustrations.html" aria-current="page">Interactive illustrations</a>
+      <a href="index.html#resources">Resources</a>
+    </div>
+  </nav>
+  <div class="app-error" data-app-error role="alert" hidden></div>
+  <main id="main">
+    <section class="course-hero" aria-labelledby="illustrations-title">
+      <div class="course-container course-illustration-header">
+        <div class="course-introduction reveal">
+          <span class="eyebrow">CME 295 / From theory to practice</span>
+          <h1 id="illustrations-title">Interactive illustrations</h1>
+          <p class="course-description">Change a parameter. Follow the computation.
+            Explore attention, sampling and masked diffusion here, separately from the chapter reading and quizzes.</p>
+          <nav class="course-hero-actions" aria-label="Choose an illustration">
+            <a class="primary-button" href="#attention">Attention <span aria-hidden="true">&darr;</span></a>
+            <a class="course-secondary-button" href="#temperature">Temperature and sampling <span aria-hidden="true">&darr;</span></a>
+            <a class="course-secondary-button" href="#diffusion">Masked diffusion <span aria-hidden="true">&darr;</span></a>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <section class="course-illustrations" id="illustrations" aria-labelledby="experiments-heading">
+      <div class="course-container">
+        <div class="course-section-heading">
+          <div><span class="eyebrow">Three teaching experiments</span><h2 id="experiments-heading">Explore the mechanics</h2></div>
+          <p>Toy inputs. Real calculations. Visible steps.</p>
+        </div>
+        <p class="course-illustration-intro">Attention and temperature use invented vectors and fixed logits; masked diffusion follows a scripted schedule.
+          No trained models or AI API calls are involved.</p>
+        <section class="widget course-attention" id="attention" data-attention data-title="Scaled dot-product attention" aria-label="Interactive attention example"></section>
+        <div class="experiments-grid">
+          <section class="widget" id="temperature" data-temperature data-title="Temperature and sampling" aria-label="Interactive temperature example"></section>
+          <section class="widget" id="diffusion" data-diffusion data-title="Masked diffusion" aria-label="Interactive masked diffusion example"></section>
+        </div>
+        <p class="course-scope-note"><a href="index.html#chapters"><span aria-hidden="true">&larr;</span> Back to the cheatsheet and chapter quizzes</a></p>
+      </div>
+    </section>
+    <noscript><div class="course-container course-noscript">The interactive illustrations require JavaScript.
+      <a href="assets/source-en.pdf">Read the complete English cheatsheet.</a></div></noscript>
+  </main>
+  <footer class="course-footer">
+    <div class="course-container"><div class="credit" data-credit></div></div>
+  </footer>
+</body>
+</html>
